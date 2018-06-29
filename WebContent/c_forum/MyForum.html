@@ -1,0 +1,18 @@
+<div class="container" ng-Controller="forumController">
+
+ <h1 class="well"><center><font face="Monotype Corsiva">Forum Detail</font></center></h1>
+  
+  <div id="myblog" ng-repeat="forum in listForumData">
+  
+  <div ng-show="currentUser.emailID==forum.emailID">
+  		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{forum.forumId}}">{{forum.forumName}}</button>
+		<button type="button" class="btn btn-danger" ng-click="deleteForum(forum.forumId)">Delete</button>
+		<label ng-show="forum.status=='A'">Approved</label>
+		<label ng-show="forum.status=='NA'">Not Approved</label>
+  		<div id="{{forum.forumId}}" class="collapse">
+    			{{forum.forumContent}}
+  		</div>
+  </div>
+  </div>
+  
+</div>

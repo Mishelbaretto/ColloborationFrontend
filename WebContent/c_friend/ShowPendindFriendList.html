@@ -1,0 +1,19 @@
+<div class="container" ng-controller="FriendController">
+<h1 class="well"><center><font face="Monotype Corsiva">Pending Friend List</font></center></h1>
+
+<table class="table">
+<tr>
+<td>SL#</td>
+<td>Friend Name</td>
+<td> </td>
+</tr>
+<tr ng-repeat="friend in pendingFriendList">
+<td> </td>
+
+<td> {{friend.emailID}}</td>
+<td><button class="btn btn-info" ng-click="acceptFriend(friend.friendID)">Accept</button></td>
+<td><button class="btn btn-danger" ng-click="unfriend(friend.friendID)">Unfriend</button></td>
+</tr>
+</table>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container" ng-Controller="BlogCommentController">
+
+ <h1 class="well"><center><font face="Monotype Corsiva">Blog CommentDetail</font></center></h1>
+ <div class="row">
+			<table>
+				<tr><td colspan="2">{{blog.blogName}}</td></tr>
+				<tr><td colspan="2">{{blog.blogContent}}</td></tr>
+			</table>
+			<table>
+				<tr ng-repeat="blogcomment in blogCommentData">
+					<td colspan="2">{{blogcomment.commentText}}</td>
+					<td colspan="2">{{blogcomment.emailID}}</td>
+					<td colspan="2">{{blogcomment.commentDate}}</td>
+				</tr>
+			</table>
+		</div>
+<input type="text"  ng-model="blogcomment.commentText" placeholder="write comment here...">
+<button type="button" ng-click="addBlogComment()" class="btn btn-lg btn-info">Comment</button>	
+</form>
+</div>
+
+</div>

@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title></title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+<div class="container" ng-Controller="JobController">
+
+<h1 class="well"><center><font face="Monotype Corsiva">Show jobs</font></center></h1>
+
+
+<form id="jobform" method="post">
+<div align="center">
+
+<table class="table table-hover" align="center" border="1" width="80%">
+<tr class="info" >
+<th> Application ID </th>
+<th> TITLE </th>
+<th> OPENINGS </th>
+<th> DESCRIPTION </th>
+<th> SALARY </th>
+<th> QUALIFICATION </th>
+<th> POSTEDDATE </th>
+<th> ACTION </th>
+</tr>
+<tr ng-repeat="job in joblist">
+<td>{{job.id}}</td>
+<td>{{job.title}}</td>
+<td>{{job.no_of_openings}}</td>
+<td>{{job.description}}</td>
+<td>{{job.salary}}</td>
+<td>{{job.qualification}}</td>
+<td>{{job.posted_date | date : 'dd/MM/yyyy' }}</td>
+<td>
+	<button type="button" class="btn btn-primary" ng-click="applyJob(job.id)" ng-hide="currentUser.role == 'A'">Apply</button>
+  		<button type="button" class="btn btn-danger" ng-click="deletejob(job.id)" ng-show="currentUser.role=='A'">Delete</button>
+</td>
+
+</tr>
+</table>
+
+</div>
+</form>
+<br/><br/><br/><br/>
+<div align="center" ng-show="currentUser.role=='A'">
+Click to Add new Job <input  type="submit" value="ADD " ng-click="add()"/>
+</div>
+
+
+<div align="center">
+ <input ng-show="currentUser.role=='N'" type="submit" value="VIEW MY JOBS " ng-click="view()"/>
+</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="container" ng-controller="FriendController">
+<h1 class="well"><center><font face="Monotype Corsiva">Friend List</font></center></h1>
+
+<table class="table">
+<tr>
+<td>SL#</td>
+<td>Friend UserID</td>
+<td> </td>
+<td> </td>
+</tr>
+
+
+
+
+
+
+
+
+<tbody ng-repeat="friend in friendList">
+    <tr>
+
+
+
+            <tr>
+        <td>{{friend.friendID}}</td>
+        
+        <td><input style="border:0;" type="text" readonly ng-show="currentUser.emailID == friend.emailID" value="{{friend.friendemailID}}">
+        	<input style="border:0;" type="text" readonly ng-show="currentUser.emailID == friend.friendemailID" value="{{friend.emailID}}"></td>
+        	<td>{{friend.name}}
+        <td><button class="btn btn-danger" ng-click="unfriend(friend.friendID)">Unfriend</button></td>
+    </tr>
+ </tr>
+    </tbody>
+</table>
+
+</div>
